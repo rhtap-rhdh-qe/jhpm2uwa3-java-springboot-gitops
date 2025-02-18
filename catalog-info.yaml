@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: jhpm2uwa3-java-springboot-gitops
+  description: This is GitOps manifest for jhpm2uwa3-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=jhpm2uwa3-java-springboot
+    backstage.io/kubernetes-id: jhpm2uwa3-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: jhpm2uwa3-java-springboot   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:jhpm2uwa3-java-springboot
